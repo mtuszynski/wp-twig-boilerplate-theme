@@ -1,0 +1,12 @@
+@import './theme/fonts.scss';
+@import './settings/variables.scss';
+@import './settings/mixins.scss';
+@import './base/reset.scss';
+@import './base/base.scss';
+@import './theme/buttons.scss';
+@import './theme/typography.scss';
+
+@import './../components/**/*.scss';
+@import './../blocks/**/*.scss';
+@import './../views/**/*.scss';
+

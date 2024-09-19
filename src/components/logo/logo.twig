@@ -1,0 +1,7 @@
+<a href="{{site.url}}" title="home">
+  {% if site.logo.src != null %}
+    <img class="" src="{{site.logo.src}}" alt="{{site.name}}">
+  {% else %}
+    <span class="">{{site.name}}</span>
+  {% endif %}
+</a>

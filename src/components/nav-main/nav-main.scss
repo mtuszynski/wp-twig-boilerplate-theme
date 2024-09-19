@@ -1,0 +1,54 @@
+.nav-main {
+  display: flex;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  color: $color-white;
+  align-items: stretch;
+  width: 100%;
+  justify-content: space-around;
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &--has-children {
+      position: relative;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+
+    &[href]:hover {
+    }
+
+    .nav-main__item--has-children & {
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &--contact {
+    .nav-main__item {
+      margin-right: 20px;
+    }
+
+    .nav-sub {
+      display: none !important;
+    }
+
+    li > a {
+    }
+  }
+
+  &--lng {
+    .nav-main__item {
+      margin-right: 0;
+    }
+  }
+}

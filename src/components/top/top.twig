@@ -1,0 +1,13 @@
+<div class="top">
+    <div class="top__social">
+        {% for social in theme_settings.socials %}
+            <a href="{{ social.address }}">
+            <img src="{{ social.icon.url }}" width="24" height="24" alt="{{ social.icon.alt }}" class="top__social-icon">
+            </a>
+        {% endfor %}
+    </div>
+    <div class="top__logo">
+        {% include 'logo/logo.twig' %}
+    </div>
+    <a href="{{ theme_settings.phone.url }}" class="top__phone">{{ 'phone' | icon }}{{ theme_settings.phone.title }}</a>
+</div>

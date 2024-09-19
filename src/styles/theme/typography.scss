@@ -1,0 +1,91 @@
+html {
+ font-size: 62.5%;
+ line-break: anywhere;
+}
+
+body {
+ font-family: $primary-font-family;
+ @include font-size(16, 28, 400);
+}
+
+h1,
+.h1 {
+ font-family: $header-font-family;
+ @include font-size(64, 82, 500);
+ @include breakpoint-down(sm) {
+  @include font-size(30, 38, 500);
+ }
+}
+
+h2,
+.h2 {
+ font-family: $header-font-family;
+ @include font-size(44, 56, 500);
+ @include breakpoint-down(sm) {
+  @include font-size(25, 32, 500);
+ }
+}
+
+h3,
+.h3 {
+ font-family: $header-font-family;
+ @include font-size(28, 56, 500);
+}
+
+h4,
+.h4 {
+ font-family: $header-font-family;
+ @include font-size(34, 41, 500);
+ letter-spacing: 0.04rem;
+}
+
+h5,
+.h5 {
+ font-family: $primary-font-family;
+ @include font-size(24, 38, 400);
+}
+
+h6,
+.h6 {
+ font-family: $primary-font-family;
+ @include font-size(24, 50, 400);
+ text-transform: uppercase;
+}
+
+.subtitle {
+ font-family: $primary-font-family;
+ @include font-size(16, 25, 400);
+}
+
+.tabs {
+ font-family: $primary-font-family;
+ @include font-size(16, 25, 400);
+ letter-spacing: 0.04rem;
+ text-transform: uppercase;
+}
+
+.caption-1 {
+ font-family: $primary-font-family;
+ @include font-size(13, 28, 400);
+}
+
+.caption-2 {
+ font-family: $primary-font-family;
+ @include font-size(10, 12, 400);
+ letter-spacing: 0.08rem;
+ text-transform: uppercase;
+}
+
+.btn-font {
+ font-family: $primary-font-family;
+ @include font-size(14, 17, 400);
+ letter-spacing: 0.08rem;
+ text-transform: uppercase;
+}
+
+.link {
+ font-family: $primary-font-family;
+ @include font-size(14, 17, 400);
+ text-decoration-line: underline;
+ text-transform: uppercase;
+}

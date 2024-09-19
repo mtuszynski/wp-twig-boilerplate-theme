@@ -1,0 +1,15 @@
+.nav-footer {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    display: flex;
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 12px;
+  }
+
+  &__link {
+
+  }
+}

@@ -1,0 +1,109 @@
+.header {
+position: relative;
+  width: 100%;
+  transition: 0.3s;
+  z-index: 10;
+  background: #FFFFFF;
+  height: 135px;
+
+  &--scroll-down {
+      transform: translateY(-85px);
+      position: fixed;
+  }
+
+  &--scroll-up {
+      transform: translateY(-85px);
+  }
+  &--scroll {
+    background-color: $color-primary;
+  }
+
+  &__container {
+    @extend .container;
+  }
+
+
+  &__logo {
+    position: relative;
+    a {
+      display: block;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      max-height: 100%;
+    }
+  }
+  &__nav {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    background: $color-primary;
+    margin: 0 auto;
+    padding-block: 1.4rem;
+    @include breakpoint-down(sm){
+      display: none;
+      position: absolute;
+      right: 0;
+      left:0;
+      width:100%;
+      height:100vh;
+    }
+  }
+}
+.fixed{
+  position: fixed;
+}
+.hamburger-menu {
+  display:none;
+
+  @include breakpoint-down(sm){
+    display:block;
+    padding:.7rem;
+  }
+}
+.hamburger-menu .line{
+  width: 24px;
+  height: 2px;
+  background-color: $color-primary;
+  display: block;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu:hover{
+  cursor: pointer;
+}
+
+/* ONE */
+
+#hamburger-1.is-active .line:nth-child(2){
+  opacity: 0;
+}
+
+#hamburger-1.is-active .line:nth-child(1){
+  -webkit-transform: translateY(4px) rotate(45deg);
+  -ms-transform: translateY(4px) rotate(45deg);
+  -o-transform: translateY(4px) rotate(45deg);
+  transform: translateY(4px) rotate(45deg);
+  background:$color-white;
+  z-index: 2;
+  position: relative;
+}
+
+#hamburger-1.is-active .line:nth-child(3){
+  -webkit-transform: translateY(-10px) rotate(-45deg);
+  -ms-transform: translateY(-10px) rotate(-45deg);
+  -o-transform: translateY(-10px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg);
+  background:$color-white;
+  z-index: 2;
+  position: relative;
+}
+.hamburger-menu.is-active {
+  position: absolute;
+  right: 2rem;
+}

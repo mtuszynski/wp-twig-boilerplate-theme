@@ -1,0 +1,53 @@
+html {
+ scroll-behavior: smooth;
+}
+
+body {
+ position: relative;
+ z-index: 1;
+ background: #FFF;
+}
+
+* {
+ box-sizing: border-box;
+}
+
+a[href] {
+ cursor: pointer;
+}
+
+img {
+ max-width: 100%;
+ height: auto;
+}
+
+.container {
+ width: 100%;
+ max-width: 137.2rem;
+
+ margin: 0 auto;
+ box-sizing: border-box;
+ @include breakpoint-down(xl) {
+  padding-inline: 1.6rem;
+ }
+}
+
+.full-container {
+ width: 100%;
+ max-width: 144.4rem;
+ margin: 0 auto;
+ box-sizing: border-box;
+ @include breakpoint-down(sm) {
+  padding-inline: 1.6rem;
+ }
+}
+
+.small-container {
+ width: 100%;
+ max-width: 90.8rem;
+ margin: 0 auto;
+ box-sizing: border-box;
+ @include breakpoint-down(md) {
+  padding-inline: 1.6rem;
+ }
+}

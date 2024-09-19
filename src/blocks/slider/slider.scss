@@ -1,0 +1,17 @@
+.slider{
+  &__container {
+    background:$color-white;
+    @extend .container;
+    display: flex;
+    height: 600px;
+    justify-content: space-between;
+    padding-block: 4rem;
+  }
+  &__slider {
+    flex:0 0 60%;
+  }
+  &__poster{
+    flex:0 0 40%;
+    object-fit: scale-down;
+  }
+}

@@ -1,0 +1,46 @@
+<section class="hero-main">
+
+  {% set image = Image(section.image) %}
+
+  <img
+    class="hero-main__img"
+    src="{{ image.src('large') }}"
+      srcset="{{image.srcset}}"
+      sizes="100vw"
+      alt="{{ image.alt }}" />
+
+
+  <div class="hero-main__container">
+
+    <div class="hero-main__row">
+
+      <div class="hero-main__inner">
+
+        {% if section.hero_title %}
+          <h1 class="hero-main__title">
+            {{ section.hero_title | striptags('<b><strong><br><span><br>') }}
+          </h1>
+        {% endif %}
+
+        {% if section.text %}
+          <p class="hero-main__text">
+          {{ section.text | striptags('<b><br>') }}
+          </p>
+        {% endif %}
+
+        {% if section.button.url %}
+          <a class="hero-main__btn" href="{{ section.button.url }}">
+            <span>
+            {% if section.button.title %}
+              {{ section.button.title }}
+            {% endif %}
+          </span>
+          </a>
+        {% endif %}
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

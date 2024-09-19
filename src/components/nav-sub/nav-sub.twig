@@ -1,0 +1,12 @@
+<ul class="nav-sub {{ class }}">
+  {% for item in item.children %}
+    <li class="nav-sub__item">
+      <a {{ item.link ? ' href="{{ item.link }}" ' : ' ' }} class="nav-sub__link {{item.classes | join(' ')}}">
+        {{ item.title }}
+      </a>
+      {% if item.children %}
+        {% include "nav-sub/nav-sub.twig" with {'items': item.children, 'class': ''} %}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

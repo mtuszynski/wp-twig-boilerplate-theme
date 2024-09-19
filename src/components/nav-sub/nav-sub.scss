@@ -1,0 +1,40 @@
+.nav-sub {
+  $self: &;
+  background-color: $color-primary;
+  position: absolute;
+  opacity: 0;
+  display: none;
+  flex-direction: column;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+
+  li:hover > & {
+    display: flex;
+  }
+
+  &::before {
+    width: 12px;
+    height: 12px;
+    background-color: $color-primary;
+    transform: rotate(45deg);
+    top: -6px;
+    left: 24px;
+  }
+
+  &__item {
+    $self: &;
+    color: $color-primary;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    a {
+      display: block;
+      width: 230px;
+    }
+  }
+
+  &__link[href] {
+  }
+}

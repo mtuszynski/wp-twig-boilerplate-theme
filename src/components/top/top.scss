@@ -1,0 +1,38 @@
+.top {
+display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.4rem;
+  @include breakpoint-down(sm){
+    justify-content: center;
+  }
+  &__social {
+    @include breakpoint-down(sm){
+      display: none;
+    }
+  flex:0 0 30%;
+
+  }
+  &__social-icon {
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+  &__logo{
+    flex:0 0 40%;
+    display: flex;
+    justify-content: center;
+  }
+  &__phone{
+    flex:0 0 30%;
+    display: flex;
+    justify-content: flex-end;
+    @include breakpoint-down(sm){
+      display: none;
+    }
+    svg{
+      width: 3.4rem;
+      height: 3.4rem;
+    }
+  }
+}
+

@@ -1,0 +1,65 @@
+@mixin breakpoint-up($breakpoint) {
+ @if map-has-key($breakpoints, $breakpoint) {
+  @media (min-width: map-get($breakpoints, $breakpoint)) {
+   @content;
+  }
+ } @else {
+  @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. '
+          + 'Available breakpoints are: #{map-keys($breakpoints)}.';
+ }
+}
+
+@mixin breakpoint-down($breakpoint) {
+ @if map-has-key($breakpoints, $breakpoint) {
+  @media (max-width: map-get($breakpoints, $breakpoint) - 1) {
+   @content;
+  }
+ } @else {
+  @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. '
+          + 'Available breakpoints are: #{map-keys($breakpoints)}.';
+ }
+}
+
+@mixin absolute-center() {
+ position: absolute;
+ right: 0;
+ left: 0;
+ margin-right: auto;
+ margin-left: auto;
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+ content: $content;
+ display: $display;
+ position: $pos;
+}
+
+@mixin font-size(
+ $font-size,
+ $line-height: normal,
+ $font-weight: normal,
+ $letter-spacing: normal
+) {
+ font-size: $font-size * 0.1rem;
+ @if $line-height==normal {
+  line-height: normal;
+ } @else {
+  line-height: $line-height * 0.1rem;
+ }
+ @if $font-weight==normal {
+  font-weight: 400;
+ } @else {
+  font-weight: $font-weight;
+ }
+ @if $letter-spacing==normal {
+  letter-spacing: normal;
+ } @else {
+  letter-spacing: $letter-spacing / $font-size + 0rem;
+ }
+}
+
+@mixin cover-background {
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+}

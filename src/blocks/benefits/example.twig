@@ -1,0 +1,39 @@
+{#
+Title: Benefits
+Description: A Custom Benefits block
+Category: formatting
+Icon: <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" fill="#fff"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+Keywords: A block with gist code
+Mode: auto
+Align: center
+PostTypes: page post
+SupportsAlign: left right center wide full
+SupportsMode: true
+SupportsMultiple: true
+#}
+<section class="benefits benefits-{{block.id}} {{block.classes}}">
+    <div class="benefits__container">
+        <h2 class="benefits__title">
+            {{ fields.title }}
+        </h2>
+        <div class="benefits__tiles">
+        {% for item in fields.tiles %}
+            {% if item.only_title %}
+                <div class="benefits__item benefits__item--only-title" style="background:{{ item.text_color }};">
+                    <h5 class="benefits__name">
+                        {{ item.title }}
+                    </h5>
+                </div>
+            {% else %}
+                <div class="benefits__item benefits__item--normal" style="border-color: {{ item.text_color }}; color:{{ item.text_color }};">
+                    <div class="benefits__name">{{ item.title }}</div>
+                    <img src="{{ item.icon.url }}" class="benefits__icon" alt="">
+                    <div class="benefits__text">
+                        {{ item.text }}
+                    </div>
+                </div>
+                {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,53 @@
+.benefits {
+ padding: 8rem 0;
+
+ &__container {
+  @extend .container;
+ }
+
+ &__title {
+  padding-bottom: 8rem;
+  @include breakpoint-down(xs) {
+   width: 60%;
+   padding-bottom: 4.4rem;
+  }
+ }
+
+ &__tiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @include breakpoint-down(xs) {
+   flex-direction: column;
+  }
+ }
+
+ &__item {
+  flex: 0 0 24%;
+  min-height: 22rem;
+  margin-bottom: 2.4rem;
+  border-width: 1px;
+  border-style: solid;
+  @include breakpoint-down(sm) {
+   flex: 0 0 49%;
+  }
+  @include breakpoint-down(xs) {
+   flex: none;
+  }
+
+  &--only-title {
+   padding-top: 2.4rem;
+   padding-left: 2.4rem;
+   border: none;
+   color: $color-secondary;
+  }
+
+  &--normal {
+   padding: 2.4rem;
+
+   img {
+    padding-bottom: 2.4rem;
+   }
+  }
+ }
+}
